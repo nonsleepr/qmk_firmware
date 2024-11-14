@@ -67,7 +67,8 @@
     "mousekey": false,
     "nkro": true,
     "rgb_matrix": true,
-    "combo": true
+    "combo": true,
+    "swap_hands": true
   },
   "matrix_pins": {
     "cols": ["E6", "E3", "E4", "D3", "D4", "D5", "C0", "A7", "A6", "E1", "E0", "D7"],
