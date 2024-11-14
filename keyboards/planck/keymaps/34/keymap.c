@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT_ortho_4x12(KC_Q, LGUI_T(KC_W), KC_E, KC_R, KC_T, KC_NO, KC_NO, KC_Y, KC_U, KC_I, RGUI_T(KC_O), KC_P, KC_A, KC_S, KC_D, KC_F, KC_G, KC_NO, KC_NO, KC_H, KC_J, KC_K, KC_L, KC_SCLN, LSFT_T(KC_Z), LALT_T(KC_X), LCTL_T(KC_C), KC_V, KC_B, KC_NO, KC_NO, KC_N, KC_M, RCTL_T(KC_COMM), RALT_T(KC_DOT), RSFT_T(KC_SLSH), KC_NO, KC_NO, KC_NO, MO(1), SH_T(KC_SPC), KC_NO, KC_NO, SH_T(KC_SPC), MO(2), KC_NO, KC_NO, KC_NO),
     [1] = LAYOUT_ortho_4x12(KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_NO, KC_NO, KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_NO, KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_LCBR, KC_NO, KC_NO, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_NO, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_RCBR, KC_NO, KC_NO, KC_HOME, KC_PGDN, KC_PGUP, KC_END, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, MO(3), KC_NO, KC_NO, KC_NO),
     [2] = LAYOUT_ortho_4x12(KC_1, KC_2, KC_3, KC_4, KC_5, KC_NO, KC_NO, KC_6, KC_7, KC_8, KC_9, KC_0, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PLUS, KC_4, KC_5, KC_6, KC_MINS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_EQL, KC_1, KC_2, KC_3, KC_UNDS, KC_NO, KC_NO, KC_NO, MO(3), KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO),
-    [3] = LAYOUT_ortho_4x12(QK_BOOT, DB_TOGG, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F4, KC_F5, KC_F6, KC_F11, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F1, KC_F2, KC_F3, KC_F12, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO)
+    [3] = LAYOUT_ortho_4x12(QK_BOOT, DB_TOGG, RGB_MOD, RGB_M_X, KC_NO, KC_NO, KC_NO, KC_NO, KC_F7, KC_F8, KC_F9, KC_F10, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F4, KC_F5, KC_F6, KC_F11, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_F1, KC_F2, KC_F3, KC_F12, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_NO, KC_NO, KC_NO)
 };
 
 #if defined(ENCODER_ENABLE) && defined(ENCODER_MAP_ENABLE)
@@ -32,7 +32,7 @@ const uint16_t PROGMEM combo_space[] =   {KC_D,           KC_F,            COMBO
 const uint16_t PROGMEM combo_tab[] =     {KC_F,           KC_G,            COMBO_END};
 const uint16_t PROGMEM combo_ctrl_c[] =  {LALT_T(KC_X),   LCTL_T(KC_C),    COMBO_END};
 const uint16_t PROGMEM combo_ctrl_v[] =  {LCTL_T(KC_C),   KC_V,            COMBO_END};
-const uint16_t PROGMEM combo_cw_rght[] = {KC_V,           KC_B,            COMBO_END};
+const uint16_t PROGMEM combo_aw_rght[] = {KC_V,           KC_B,            COMBO_END};
 
 const uint16_t PROGMEM combo_bsls[] =    {KC_Y,           KC_U,            COMBO_END};
 const uint16_t PROGMEM combo_quot[] =    {KC_I,           RGUI_T(KC_O),    COMBO_END};
@@ -40,7 +40,7 @@ const uint16_t PROGMEM combo_dquo[] =    {RGUI_T(KC_O),   KC_P,            COMBO
 const uint16_t PROGMEM combo_bspc[] =    {KC_H,           KC_J,            COMBO_END};
 const uint16_t PROGMEM combo_ent[] =     {KC_J,           KC_K,            COMBO_END};
 const uint16_t PROGMEM combo_coln[] =    {KC_L,           KC_SCLN,         COMBO_END};
-const uint16_t PROGMEM combo_cw_left[] = {KC_N,           KC_M,            COMBO_END};
+const uint16_t PROGMEM combo_aw_left[] = {KC_N,           KC_M,            COMBO_END};
 const uint16_t PROGMEM combo_ques[] =    {RALT_T(KC_DOT), RSFT_T(KC_SLSH), COMBO_END};
 
 combo_t key_combos[] = {
@@ -51,14 +51,15 @@ combo_t key_combos[] = {
   COMBO(combo_tab,     KC_TAB),
   COMBO(combo_ctrl_c,  LCTL(KC_C)),
   COMBO(combo_ctrl_v,  LCTL(KC_V)),
-  COMBO(combo_cw_rght, LSG(KC_RGHT)),
+  COMBO(combo_aw_rght, LAG(KC_RGHT)),
+
   COMBO(combo_bsls,    KC_BSLS),
   COMBO(combo_quot,    KC_QUOT),
   COMBO(combo_dquo,    KC_DQUO),
   COMBO(combo_bspc,    KC_BSPC),
   COMBO(combo_ent,     KC_ENT),
   COMBO(combo_coln,    KC_COLN),
-  COMBO(combo_cw_left, LSG(KC_LEFT)),
+  COMBO(combo_aw_left, LAG(KC_LEFT)),
   COMBO(combo_ques,    KC_QUES),
 };
 #endif
