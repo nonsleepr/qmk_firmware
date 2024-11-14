@@ -78,7 +78,7 @@
     "pin": "A5"
   },
   "combo": {
-    "count": 15,
+    "count": 16,
     "term": 50
   },
   "processor": "at90usb1286",
