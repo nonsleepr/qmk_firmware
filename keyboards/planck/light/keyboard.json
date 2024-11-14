@@ -4,8 +4,8 @@
   "url": "https://olkb.com/planck",
   "maintainer": "jackhumbert",
   "usb": {
-    "vid": "0x03A8",
-    "pid": "0xBEA2",
+    "vid": "0x6F6C",
+    "pid": "0x6065",
     "device_version": "0.0.1"
   },
   "rgb_matrix": {
@@ -63,10 +63,11 @@
     "command": false,
     "console": true,
     "extrakey": true,
-    "midi": true,
+    "midi": false,
     "mousekey": false,
     "nkro": true,
-    "rgb_matrix": true
+    "rgb_matrix": true,
+    "combo": true
   },
   "matrix_pins": {
     "cols": ["E6", "E3", "E4", "D3", "D4", "D5", "C0", "A7", "A6", "E1", "E0", "D7"],
@@ -75,6 +76,10 @@
   "diode_direction": "COL2ROW",
   "backlight": {
     "pin": "A5"
+  },
+  "combo": {
+    "count": 15,
+    "term": 50
   },
   "processor": "at90usb1286",
   "bootloader": "atmel-dfu",

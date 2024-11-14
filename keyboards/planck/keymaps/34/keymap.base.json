@@ -1,9 +1,9 @@
 {
     "version": 1,
-    "author": "",
+    "author": "nonsleepr",
     "notes": "",
     "keyboard": "planck/light",
-    "keymap": "planck_light_34",
+    "keymap": "34",
     "layout": "LAYOUT_ortho_4x12",
     "layers": [
                 [
